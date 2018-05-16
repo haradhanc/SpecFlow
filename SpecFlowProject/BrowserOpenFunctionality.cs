@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace SpecFlowProject
 {
-    public class BrowserOpen
+    public class BrowserOpenFunctionality
     {
         protected static IWebDriver driver;
 
         public static IWebDriver OpenApp(String browsername,String url)
         {
-            Fn_LaunchBrowser(browsername);
+            LaunchBrowser(browsername);
             OpenUrl(url);
             return driver;
         }
@@ -26,18 +26,18 @@ namespace SpecFlowProject
             driver.Manage().Window.Maximize();
         
         }
-        public static IWebDriver Fn_LaunchBrowser(String browsername)
+        public static IWebDriver LaunchBrowser(String browsername)
         {
-            if(browsername=="CH")
+            if(browsername=="Chrome")
             {
                 
                 driver = new ChromeDriver();
             }
-            else if(browsername=="IE")
+            else if(browsername=="InternetExplorer")
             {
                 driver = new InternetExplorerDriver();
             }
-            else if(browsername=="FF")
+            else if(browsername=="Firefox")
             {
                 driver = new FirefoxDriver();
             }

@@ -12,23 +12,28 @@ using NUnit.Framework;
 namespace SpecFlowProject
 {
     [Binding]
-    public class CommonStepDefinition : BrowserOpen
+    public class CommonStepDefinition : BrowserOpenFunctionality
     {
+        GooglePageElements element = new GooglePageElements();
 
-
-        [Given(@"Open browser and start application")]
-        public void GivenOpenBrowserAndStartApplication()
+        [Given(@"Open (.*) and start (.*) now")]
+        public void GivenOpenChromeAndStartApplication(String browser,String url)
         {
-            OpenApp("CH", "https://aviva.com");
+            OpenApp(browser,url);
         }
-        
-        
 
-        
-
-
-
+        [When(@"I enter (.*)")]
+        public void WhenIEnterAviva(String keyword)
+        {            
+            element.SearchKeyword(keyword);
         }
+
+
+
+
+
+
+    }
         
         
     }

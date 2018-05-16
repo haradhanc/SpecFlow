@@ -66,29 +66,28 @@ namespace SpecFlowProject
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search Keyword in Aviva Application")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void SearchKeywordInAvivaApplication()
+        [NUnit.Framework.TestCaseAttribute("Chrome", "Aviva", "http://www.google.com", "Aviva Life Insurance - Login", null)]
+        public virtual void SearchKeywordInAvivaApplication(string browser, string keyword, string application, string link, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Keyword in Aviva Application", new string[] {
-                        "mytag"});
+            string[] @__tags = new string[] {
+                    "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Keyword in Aviva Application", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("Open browser and start application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("Open {0} and start {1} now", browser, application), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("I click on search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Keyword"});
-            table1.AddRow(new string[] {
-                        "Aviva"});
+ testRunner.When(string.Format("I enter {0}", keyword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.When("I enter keyword", ((string)(null)), table1, "When ");
-#line 11
- testRunner.When("I click on search icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
+ testRunner.And("I click on search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
     testRunner.Then("Search result is displayed with number of links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
- testRunner.And("I want to print the fifth link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And(string.Format("I want to print the {0} in position fifth", link), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

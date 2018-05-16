@@ -66,10 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvivaSearchFunctionalitySteps.cs" />
-    <Compile Include="BrowserOpen.cs" />
+    <Compile Include="BrowserOpenFunctionality.cs" />
     <Compile Include="CommonStepDefinition.cs" />
-    <Compile Include="SearchProperty.cs" />
-    <Compile Include="PageObjectElement.cs" />
+    <Compile Include="GooglePageElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AvivaSearchFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
