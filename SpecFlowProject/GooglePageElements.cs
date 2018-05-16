@@ -16,8 +16,7 @@ using TechTalk.SpecFlow.Assist;
 namespace SpecFlowProject
 {
     public class GooglePageElements : BrowserOpenFunctionality
-    {
-        
+    {       
         By searchTextBox = By.XPath("//input[@name='q']");
         By searchIconClick = By.XPath("//button[@name='submit']");
                 

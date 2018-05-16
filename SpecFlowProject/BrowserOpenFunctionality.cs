@@ -29,8 +29,7 @@ namespace SpecFlowProject
         public static IWebDriver LaunchBrowser(String browsername)
         {
             if(browsername=="Chrome")
-            {
-                
+            {                
                 driver = new ChromeDriver();
             }
             else if(browsername=="InternetExplorer")
