@@ -19,6 +19,7 @@ namespace SpecFlowProject
     {       
         By searchTextBox = By.XPath("//input[@name='q']");
         By searchIconClick = By.XPath("//button[@name='submit']");
+        By linkTextElement = By.CssSelector("div.rc > h3 > a");
                 
         public void SearchKeyword(String keyword)
         {
@@ -34,18 +35,15 @@ namespace SpecFlowProject
         public void VerifySearchPageWithLinkCount()
         {
             IList elementList = new ArrayList();
-            elementList = driver.FindElements(By.TagName("a"));
+            elementList = driver.FindElements(linkTextElement);
             Console.WriteLine("Total number of links are:" + elementList.Count);
                        
         }
-        public void PrintLinkText(String elementText)
+        public string GetLinkText(int position)
         {
-            String elementTextVerify = driver.FindElement(By.LinkText("Aviva Life Insurance - Login")).Text;
-            Assert.AreEqual(elementTextVerify, elementText);
-            Console.WriteLine(elementText);
-
+            IList<IWebElement> linkTextElelemts = driver.FindElements(linkTextElement);
+            return linkTextElelemts[position - 1].Text;
         }
-
 
     }
 }

@@ -20,9 +20,15 @@ namespace SpecFlowProject
         }
         
         [Then(@"I want to print the (.*) in position fifth")]
-        public void ThenIWantToPrintTheFifthLink(String elementText)
+        public void ThenIWantToPrintTheFifthLink(int elementPosition)
         {
-            element.PrintLinkText(elementText);
+            element.GetLinkText(elementPosition);
+        }
+        [Then(@"Search result should display more than fifth number of links")]
+        public void SearchResultShouldDisplayMoreThanFifthNumberOfLinks()
+        {
+            element.VerifySearchPageWithLinkCount();
+
         }
     }
 }

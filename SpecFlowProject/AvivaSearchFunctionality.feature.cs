@@ -64,18 +64,18 @@ namespace SpecFlowProject
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search Keyword in Aviva Application")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Chrome", "Aviva", "http://www.google.com", "Aviva Life Insurance - Login", null)]
-        public virtual void SearchKeywordInAvivaApplication(string browser, string keyword, string application, string link, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Search Aviva Keyword in Google Application")]
+        [NUnit.Framework.CategoryAttribute("Positive")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "Aviva", "http://www.google.com", "5", null)]
+        public virtual void SearchAvivaKeywordInGoogleApplication(string browser, string keyword, string application, string link, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Positive"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Keyword in Aviva Application", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Aviva Keyword in Google Application", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -87,6 +87,35 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
     testRunner.Then("Search result is displayed with number of links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
+ testRunner.And(string.Format("I want to print the {0} in position fifth", link), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Search Other Keyword in Google Application")]
+        [NUnit.Framework.CategoryAttribute("Negative")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "UK", "http://www.google.com", "5", null)]
+        public virtual void SearchOtherKeywordInGoogleApplication(string browser, string keyword, string application, string link, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Negative"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Other Keyword in Google Application", @__tags);
+#line 18
+ this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given(string.Format("Open {0} and start {1} now", browser, application), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.When(string.Format("I enter {0}", keyword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.And("I click on search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+    testRunner.Then("Search result should display more than fifth number of links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
  testRunner.And(string.Format("I want to print the {0} in position fifth", link), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
