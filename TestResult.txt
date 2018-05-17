@@ -1,0 +1,26 @@
+=> SpecFlowProject.AvivaSearchFunctionalityFeature.SearchAvivaKeywordInGoogleApplication("Chrome","Aviva","http://www.google.com","5",null)
+Given Open Chrome and start http://www.google.com now
+-> done: CommonStepDefinition.GivenOpenChromeAndStartApplication("Chrome", "http://www.google...") (16.5s)
+When I enter Aviva
+-> done: CommonStepDefinition.WhenIEnterAviva("Aviva") (0.6s)
+And I click on search button
+-> done: AvivaSearchFunctionalitySteps.WhenIClickOnSearchButton() (4.2s)
+Then Search result is displayed with number of links
+Total number of links are:6
+-> done: AvivaSearchFunctionalitySteps.ThenSearchResultIsDisplayedWithNumberOfLinks() (0.0s)
+And I want to print the 5 in position fifth
+-> done: AvivaSearchFunctionalitySteps.ThenIWantToPrintTheFifthLink(5) (0.0s)
+=> SpecFlowProject.AvivaSearchFunctionalityFeature.SearchOtherKeywordInGoogleApplication("Chrome","UK","http://www.google.com","5",null)
+Given Open Chrome and start http://www.google.com now
+-> done: CommonStepDefinition.GivenOpenChromeAndStartApplication("Chrome", "http://www.google...") (17.7s)
+When I enter UK
+-> done: CommonStepDefinition.WhenIEnterAviva("UK") (0.8s)
+And I click on search button
+-> done: AvivaSearchFunctionalitySteps.WhenIClickOnSearchButton() (2.7s)
+Then Search result should display more than fifth number of links
+Total number of links are:9
+-> done: AvivaSearchFunctionalitySteps.SearchResultShouldDisplayMoreThanFifthNumberOfLinks() (0.0s)
+And I want to print the 5 in position fifth
+-> done: AvivaSearchFunctionalitySteps.ThenIWantToPrintTheFifthLink(5) (0.0s)
+=> SpecFlowProject.AvivaSearchFunctionalityFeature
+-> Using app.config

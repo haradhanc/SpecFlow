@@ -23,6 +23,7 @@ namespace SpecFlowProject
         public void ThenIWantToPrintTheFifthLink(int elementPosition)
         {
             element.GetLinkText(elementPosition);
+            
         }
         [Then(@"Search result should display more than fifth number of links")]
         public void SearchResultShouldDisplayMoreThanFifthNumberOfLinks()

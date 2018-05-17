@@ -42,7 +42,9 @@ namespace SpecFlowProject
         public string GetLinkText(int position)
         {
             IList<IWebElement> linkTextElelemts = driver.FindElements(linkTextElement);
+            Console.WriteLine("The Text of fifth link is:"+" "+linkTextElelemts[position - 1].Text);
             return linkTextElelemts[position - 1].Text;
+            
         }
 
     }
