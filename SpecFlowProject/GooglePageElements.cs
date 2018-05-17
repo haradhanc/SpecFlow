@@ -36,8 +36,7 @@ namespace SpecFlowProject
         {
             IList elementList = new ArrayList();
             elementList = driver.FindElements(linkTextElement);
-            Console.WriteLine("Total number of links are:" + elementList.Count);
-                       
+            Console.WriteLine("Total number of links are:" + elementList.Count);                       
         }
         public string GetLinkText(int position)
         {
