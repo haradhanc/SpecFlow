@@ -23,8 +23,7 @@ namespace SpecFlowProject
                 
         public void SearchKeyword(String keyword)
         {
-            driver.FindElement(searchTextBox).SendKeys(keyword);
-            
+            driver.FindElement(searchTextBox).SendKeys(keyword);            
         }
         public void SearchBtnClick()
         {
